@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { IconButton } from '@mui/material';
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import { Link } from "react-router-dom";

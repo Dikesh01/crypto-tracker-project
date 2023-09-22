@@ -12,7 +12,7 @@ function Footer() {
   }
   return (
     <div className="footer">
-      <h2 className="logo" onClick={() => topFunction()}>
+      <h2 className="Footer_logo" onClick={() => topFunction()}>
         CryptoTracker<span>.</span>
       </h2>
       <div className="social-links">

@@ -8,7 +8,7 @@ function Header() {
   return (
     <div className='navbar'>
       <h1 className="logo">
-        Crypto Tracker<span style={{color:"var(--blue)"}}>.</span>
+        Crypto Tracker<span style={{color:"var(--grey)"}}> _ _</span>
       </h1>
       <div className="links">
         <Link to='/'>
@@ -24,7 +24,8 @@ function Header() {
             <Button 
             text="Dashboard" 
             // outlined={true}
-            onClick={()=>console.log("btn Clicked") }/>
+            // onClick={()=>console.log("btn Clicked") }
+            />
         </Link>
       </div>
       <div className="mobile-drawer">

@@ -15,7 +15,7 @@ function MainComponent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Track Crypto
+          𝙏𝙧𝙖𝙘𝙠 𝘾𝙧𝙮𝙥𝙩𝙤
         </motion.h1>
         <motion.h1
           className="real-time-heading"
@@ -23,7 +23,7 @@ function MainComponent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          Real Time.
+          𝙍𝙚𝙖𝙡 𝙏𝙞𝙢𝙚.
         </motion.h1>
         <motion.p
           className="info-text"

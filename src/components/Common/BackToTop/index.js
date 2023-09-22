@@ -25,7 +25,7 @@ function topFunction() {
 
   return (
     <div className="back-to-top-btn" id="myBtn" onClick={()=>topFunction()}>
-      <KeyboardDoubleArrowUpRoundedIcon style={{color:"var(--blue)"}}/>
+      <KeyboardDoubleArrowUpRoundedIcon style={{color:"var(--white)"}}/>
     </div>
   );
 }
