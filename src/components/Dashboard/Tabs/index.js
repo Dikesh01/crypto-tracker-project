@@ -45,7 +45,7 @@ export default function TabComponents({ coins }) {
         <TabPanel value="grid">
           <div className="grid-flex">
             {coins.map((coin, idx) => (
-              <Grid coin={coin} key={idx} />
+              <Grid coin={coin} delay={((idx + 5) % 5) * 0.1} key={idx} />
             ))}
           </div>
         </TabPanel>
@@ -53,7 +53,7 @@ export default function TabComponents({ coins }) {
         <TabPanel value="list">
           <table className="list-table">
             {coins.map((coin, idx) => (
-              <List coin={coin} key={idx} />
+              <List coin={coin} delay={((idx + 5) % 5) * 0.1} key={idx} />
             ))}
           </table>
         </TabPanel>

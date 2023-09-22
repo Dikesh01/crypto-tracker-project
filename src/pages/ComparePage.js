@@ -59,14 +59,7 @@ function ComparePage() {
       }
     }
 
-    // if(data1 && data2){
-    //   const prices1 = await getCoinPrices(crypto1, days, priceType);
-    //   const prices2 = await getCoinPrices(crypto2, days, priceType);
-    //   if (prices1.length > 0 && prices2.length > 0) {
-    //     console.log("PRICES 1>>>",prices1, "PRICES 2>>>", prices2)
-    //     setIsLoading(false);
-    //   }
-    // }
+
   }
 
   const handleCoinChange = async (event, isCoin2) => {
@@ -78,7 +71,7 @@ function ComparePage() {
       const prices1 = await getCoinPrices(crypto1, days, priceType);
       const prices2 = await getCoinPrices(crypto2, days, priceType);
       if (prices1.length > 0 && prices2.length > 0) {
-        // settingChartData(setChartData, prices);
+        settingChartData(setChartData, crypto1);
         console.log("PRICES 1>>>", prices1, "PRICES 2>>>", prices2);
         setIsLoading(false);
       }
