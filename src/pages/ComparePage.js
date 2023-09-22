@@ -11,6 +11,7 @@ import CoinInfo from "../components/Coin/CoinInfo";
 import { settingChartData } from "../functions/settingChartData";
 import LineChart from "../components/Coin/LineChart";
 import TogglePriceType from "../components/Coin/PriceType";
+import Footer from "../components/Common/Footer";
 
 function ComparePage() {
   const [crypto1, setCrypto1] = useState("bitcoin");
@@ -71,14 +72,15 @@ function ComparePage() {
       const prices1 = await getCoinPrices(crypto1, days, priceType);
       const prices2 = await getCoinPrices(crypto2, days, priceType);
       if (prices1.length > 0 && prices2.length > 0) {
-        settingChartData(setChartData, crypto1);
-        console.log("PRICES 1>>>", prices1, "PRICES 2>>>", prices2);
+        // settingChartData(setChartData, crypto1);
+        // console.log("PRICES 1>>>", prices1, "PRICES 2>>>", prices2);
         setIsLoading(false);
       }
     } else {
       setCrypto1(event.target.value);
       const data = await getCoinData(event.target.value);
       coinObject(setCrypto1Data, data);
+      setIsLoading(false);
     }
   };
 
@@ -125,6 +127,7 @@ function ComparePage() {
           <CoinInfo heading={crypto2Data.name} desc={crypto2Data.desc} />
         </>
       )}
+      <Footer />
     </div>
   );
 }

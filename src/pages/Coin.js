@@ -14,6 +14,7 @@ import SelectDays from "../components/Coin/SelectDays";
 import { settingChartData } from "../functions/settingChartData";
 import PriceType from "../components/Coin/PriceType";
 import TogglePriceType from "../components/Coin/PriceType";
+import Footer from "../components/Common/Footer";
 
 function CoinPage() {
   const { id } = useParams();
@@ -85,6 +86,7 @@ function CoinPage() {
           <CoinInfo heading={coinData.name} desc={coinData.desc} />
         </>
       )}
+      <Footer />
     </div>
   );
 }
