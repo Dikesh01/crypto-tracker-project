@@ -5,6 +5,7 @@ import "./style.css";
 import TemporaryDrawer from './drawer';
 import Button from '../Button';
 import { Link } from 'react-router-dom';
+import MonetizationOnRoundedIcon from '@mui/icons-material/MonetizationOnRounded';
 
 function Header() {
   const [darkMode, setDarkMode] = useState(
@@ -42,7 +43,7 @@ function Header() {
   return (
     <div className='navbar'>
       <h1 className="logo">
-        Crypto Tracker<span style={{color:"var(--grey)"}}> _ _</span>
+        Crypto Tracker <MonetizationOnRoundedIcon/>
       </h1>
       <div className="links">
 

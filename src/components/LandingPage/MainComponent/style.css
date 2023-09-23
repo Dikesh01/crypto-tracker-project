@@ -12,14 +12,14 @@
 }
 
 .track-crypto-heading{
-    color: var(--white);
+    color: var(--yellow);
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: var(--white);
+    -webkit-text-stroke-color: var(--yellow);
 }
 
 .track-crypto-heading:hover{
     color: var(--black);
-    -webkit-text-stroke-color: var(--white);
+    -webkit-text-stroke-color: var(--yellow);
     transition: all 0.3s;
 }
 
