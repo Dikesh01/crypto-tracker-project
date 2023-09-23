@@ -117,3 +117,12 @@
     transition: all 0.5s;
 }
 
+.watchlist_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    padding: 0.6rem !important;
+    border-radius: 50%;
+    min-width: auto !important;
+}

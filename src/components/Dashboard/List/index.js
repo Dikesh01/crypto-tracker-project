@@ -2,6 +2,7 @@ import React from 'react'
 import "./style.css";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { Tooltip } from '@mui/material';
 import { convertNumber } from '../../../functions/convertNumbers';
 import { Link } from 'react-router-dom';
@@ -26,7 +27,7 @@ function List({coin, delay}) {
                 <div className="name-col">
                 <p className="coin-symbol">{coin.symbol}-USD</p>
                 <p className="coin-name">{coin.name}</p>
-                </div>
+                </div>  
             </td>
         </Tooltip>
         
@@ -83,6 +84,17 @@ function List({coin, delay}) {
         <td className='mobile-td-mkt'>
             <p className="total_volume td-right-align">
                 ${convertNumber(coin.market_cap)}</p>
+        </td>
+
+        <td>
+        {coin.price_change_percentage_24h > 0 ? (
+            <div className="watchlist_icon price-chip">
+              <StarBorderIcon />
+          </div>) : (
+            <div className="watchlist_icon chip-red">
+              <StarBorderIcon />
+            </div>
+          )}
         </td>
     </Tooltip>
     </motion.tr>
