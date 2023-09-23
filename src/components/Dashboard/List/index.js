@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./style.css";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { Tooltip } from '@mui/material';
+import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
+import StarRoundedIcon from "@mui/icons-material/StarRounded";
+import { IconButton, Tooltip } from '@mui/material';
 import { convertNumber } from '../../../functions/convertNumbers';
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
+import { hasBeenAdded } from '../../../functions/hasBeenAdded';
+import { removeFromWatchlist } from '../../../functions/removeFromWatchlist';
+import { addToWatchlist } from '../../../functions/addToWatchlist';
 
 
 function List({coin, delay}) {
+  const [added, setAdded] = useState(hasBeenAdded(coin.id));
+
   return (
     <Link to={`/coin/${coin.id}`}>
     <motion.tr className='list-row'
@@ -86,17 +93,37 @@ function List({coin, delay}) {
                 ${convertNumber(coin.market_cap)}</p>
         </td>
 
-        <td>
-        {coin.price_change_percentage_24h > 0 ? (
-            <div className="watchlist_icon price-chip">
-              <StarBorderIcon />
-          </div>) : (
-            <div className="watchlist_icon chip-red">
-              <StarBorderIcon />
-            </div>
-          )}
-        </td>
     </Tooltip>
+
+    <td style={{ width: "fit-content" }}>
+          <IconButton
+            onClick={(e) => {
+              e.preventDefault();
+              if (added) {
+                removeFromWatchlist(coin.id);
+                setAdded(false);
+              } else {
+                addToWatchlist(coin.id);
+                setAdded(true);
+              }
+            }}
+          >
+            {added ? (
+              <StarRoundedIcon
+                className={`watchlist-icon ${
+                  coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
+                } `}
+              />
+            ) : (
+              <StarBorderRoundedIcon
+                className={`watchlist-icon ${
+                  coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
+                } `}
+              />
+            )}
+          </IconButton>
+        </td>
+
     </motion.tr>
     </Link>
   )

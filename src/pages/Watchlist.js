@@ -1,38 +1,57 @@
-import React, { useState } from 'react'
-import Header from '../components/Common/Header';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import React, { useEffect, useState } from "react";
+import Button from "../components/Common/Button";
+import Footer from "../components/Common/Footer";
+import Header from "../components/Common/Header";
+import Loader from "../components/Common/Loader";
+import TabsComponent from "../components/Dashboard/Tabs";
+import { get100Coins } from "../functions/get100Coins";
 
-export default function WatchList() {
-  const [value, setValue] = useState('grid');
+function WatchlistPage() {
+  const coins = JSON.parse(localStorage.getItem("watchlist"));
+  const [myWatchlist, setMyWatchlist] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    setLoading(true);
+    const allCoins = await get100Coins();
+    if (coins) {
+      setMyWatchlist(allCoins.filter((item) => coins.includes(item.id)));
+    }
+    setLoading(false);
   };
 
-  const style = {
-    color: "var(--white)",
-    width: "50vw",
-    fontSize: "1.2rem",
-    fontWeight: 600,
-    fontFamily: "Inter",
-    textTransform: "capitalize",
-  }
-
   return (
-    <>
-     <Header />
-     <TabContext value={value}>
-          <TabList onChange={handleChange}  variant="fullWidth">
-            <Tab label="Grid" value="grid" sx={style}/>
-            <Tab label="List" value="list" sx={style}/>
-          </TabList>
-
-        <TabPanel value="grid">Grid Items</TabPanel>
-        <TabPanel value="list">List Items</TabPanel>
-      </TabContext>
-    </>
+    <div>
+      {loading || !coins ? (
+        <Loader />
+      ) : (
+        <div style={{ minHeight: "90vh" }}>
+          {myWatchlist?.length == 0 || !coins ? (
+            <div>
+              <Header />
+              <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
+                No Items in the Watchlist
+              </h1>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <a href="/dashboard">
+                  <Button text={"Dashboard"} />
+                </a>
+              </div>
+            </div>
+          ) : (
+            <div style={{ height: "95vh" }}>
+              <Header />
+              <TabsComponent coins={myWatchlist} isWatchlistPage={true} />
+            </div>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
+
+export default WatchlistPage;
