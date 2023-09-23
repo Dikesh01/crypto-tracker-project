@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import "./style.css";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
-import StarRoundedIcon from "@mui/icons-material/StarRounded";
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import { IconButton, Tooltip } from '@mui/material';
 import { convertNumber } from '../../../functions/convertNumbers';
 import { Link } from 'react-router-dom';
@@ -109,13 +108,13 @@ function List({coin, delay}) {
             }}
           >
             {added ? (
-              <StarRoundedIcon
+              <BookmarkAddedIcon
                 className={`watchlist-icon ${
                   coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
                 } `}
               />
             ) : (
-              <StarBorderRoundedIcon
+              <BookmarkBorderIcon
                 className={`watchlist-icon ${
                   coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
                 } `}

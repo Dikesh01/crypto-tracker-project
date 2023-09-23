@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import "./style.css";
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-import StarBorderRoundedIcon from "@mui/icons-material/StarBorderRounded";
-import StarRoundedIcon from "@mui/icons-material/StarRounded";
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -46,14 +45,14 @@ function Grid({ coin, delay, isWatchlistPage }) {
             }}
           >
             {added ? (
-              <StarRoundedIcon
+              <BookmarkAddedIcon
                 className={`watchlist-icon ${
                   coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
                 } `}
                 sx={{ fontSize: "2rem !important" }}
               />
             ) : (
-              <StarBorderRoundedIcon
+              <BookmarkBorderIcon
                 className={`watchlist-icon ${
                   coin.price_change_percentage_24h < 0 && "watchlist-icon-red"
                 } `}
