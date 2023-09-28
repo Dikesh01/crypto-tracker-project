@@ -40,6 +40,7 @@ function Header() {
     localStorage.setItem("theme", "light");
     document.documentElement.setAttribute("data-theme", "light");
   };
+
   return (
     <div className='navbar'>
       <h1 className="logo">
@@ -66,7 +67,7 @@ function Header() {
         <Link to='/dashboard'>
             <Button 
             text="Dashboard" 
-            // outlined={true}
+            outlined={true}
             // onClick={()=>console.log("btn Clicked") }
             />
         </Link>

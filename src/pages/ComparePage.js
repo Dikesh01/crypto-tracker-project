@@ -85,7 +85,7 @@ function ComparePage() {
   };
 
   return (
-    <div>
+    <div className="main">
       <Header />
       {isLoading ? (
         <Loader />

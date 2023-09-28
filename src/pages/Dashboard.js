@@ -45,7 +45,7 @@ function DashboardPage() {
   }
 
   return (
-    <>
+    <div className="main">
       <Header />
       <BackToTop />
       {isLoading ? (
@@ -63,7 +63,7 @@ function DashboardPage() {
         </div>
       )}
       <Footer />
-    </>
+    </div>
   );
 }
 

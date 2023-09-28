@@ -1,5 +1,4 @@
 import "./App.css";
-// import Footer from "./components/Common/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home";
 import DashboardPage from "./pages/Dashboard";
