@@ -1,5 +1,13 @@
 # Getting Started with Create React App
 Project deployment link - https://animated-pithivier-cf0f66.netlify.app/
+Tack stack - 
+Java Script- react
+Material UI
+Framer motion
+Chart.js
+Tool-tip
+React-toastify
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
