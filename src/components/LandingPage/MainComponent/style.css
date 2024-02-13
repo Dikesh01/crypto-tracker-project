@@ -7,19 +7,19 @@
 
 .track-crypto-heading, 
 .real-time-heading{
-    font-size: 7rem;
+    font-size: 5.5rem;
     margin: 0;
 }
 
 .track-crypto-heading{
-    color: var(--yellow);
+    color: var(--white);
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: var(--yellow);
+    -webkit-text-stroke-color: var(--white);
 }
 
 .track-crypto-heading:hover{
     color: var(--black);
-    -webkit-text-stroke-color: var(--yellow);
+    -webkit-text-stroke-color: var(--white);
     transition: all 0.3s;
 }
 

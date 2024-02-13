@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 :root{
-  --yellow: #d1f508;
+  /* --yellow: #d1f508; */
   --white: #fff;
   --black: #111;
-  --blue: #3e0863;
+  --blue: #3a80e9;
   --grey: #888;
   --darkgrey: #1b1b1b;
   --green: #14da2f;
@@ -17,7 +17,7 @@
   --black: #111;
   --grey: #888;
   --darkgrey: #1b1b1b;
-  --blue: #3e0863;
+  /* --blue: #3e0863; */
 }
 
 [data-theme="light"] {
@@ -25,7 +25,7 @@
   --black: #fff;
   --grey: #888;
   --darkgrey: #f3f3f3;
-  --blue: #d1f508;
+  /* --blue: #d1f508; */
 }
 
 html{
